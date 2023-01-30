@@ -32,9 +32,11 @@ import 'flutter_app.dart';
 /// await flutterFire.run(['config']);
 /// ```
 class FlutterFireCommandRunner extends CommandRunner<void> {
-  FlutterFireCommandRunner(FlutterApp? flutterApp)
-      : super(
-          'flutterfire',
+  FlutterFireCommandRunner(
+    FlutterApp? flutterApp,
+    String firebaseLocation,
+  ) : super(
+          firebaseLocation,
           'A CLI tool for FlutterFire projects.',
           usageLineLength: terminalWidth,
         ) {

@@ -54,7 +54,8 @@ Future<void> main(List<String> arguments) async {
 
   try {
     final flutterApp = await FlutterApp.load(Directory.current);
-    await FlutterFireCommandRunner(flutterApp).run(arguments);
+    await FlutterFireCommandRunner(flutterApp, './node_modules/.bin/firebase')
+        .run(arguments);
   } on FlutterFireException catch (err) {
     if (utils.activeSpinnerState != null) {
       try {

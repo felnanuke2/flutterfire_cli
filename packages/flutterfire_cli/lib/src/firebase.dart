@@ -32,7 +32,7 @@ Future<bool> exists() async {
     return _existsCache!;
   }
   final process = await Process.run(
-    'firebase',
+    './node_modules/.bin/firebase',
     ['--version'],
     runInShell: true,
   );
@@ -84,7 +84,7 @@ Future<Map<String, dynamic>> runFirebaseCommand(
   ];
 
   final process = await Process.run(
-    'firebase',
+    './node_modules/.bin/firebase',
     execArgs,
     workingDirectory: workingDirectoryPath,
     runInShell: true,

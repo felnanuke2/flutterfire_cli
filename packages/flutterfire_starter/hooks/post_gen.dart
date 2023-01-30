@@ -77,7 +77,6 @@ Future<void> _runFlutterFireConfigure(HookContext context) async {
   final appName = context.vars['name'] as String;
   final app = await FlutterApp.load(Directory('./$appName'));
   final flutterFire = FlutterFireCommandRunner(app);
-
   await flutterFire.run(['config']);
 }
 
