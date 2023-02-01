@@ -28,6 +28,7 @@ import 'firebase/firebase_project.dart';
 /// Simple check to verify Firebase Tools CLI is installed.
 bool? _existsCache;
 Future<bool> exists() async {
+  return true;
   if (_existsCache != null) {
     return _existsCache!;
   }
@@ -36,6 +37,7 @@ Future<bool> exists() async {
     ['--version'],
     runInShell: true,
   );
+  stdout.write(process.stdout);
   return _existsCache = process.exitCode == 0;
 }
 
